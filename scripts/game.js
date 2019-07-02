@@ -26,8 +26,8 @@ function setup() {
 }
 
 function createScene() {
-    var WIDTH = 640
-    var HEIGHT = 360
+    var WIDTH = window.innerWidth
+    var HEIGHT = window.innerHeight 
 
     var VIEW_ANGLE = 50
     var ASPECT = WIDTH / HEIGHT
@@ -397,7 +397,7 @@ function matchScoreCheck() {
     } else if(score2 >= maxScore) {
         ballSpeed = 0
         document.getElementById("scores").innerHTML = "CPU wins!"
-        document.getElementById("winnerBoard").innerHTML = "Refresh to play again"
+        document.getElementById("winnerBoard").innerHTML = "CPU wins! \n Refresh to play again"
         bounceTime++
         paddle2.position.z = Math.sin(bounceTime * 0.1) * 10
         paddle2.scale.z = 2 + Math.abs(Math.sin(bounceTime * 0.1)) * 10
